@@ -1,0 +1,97 @@
+.groupLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink4);
+  margin-bottom: 12px;
+}
+
+.block {
+  margin-bottom: 24px;
+}
+
+.gapVis {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 16px 0 4px;
+}
+
+.gapItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.gapBar {
+  background: var(--stroke);
+  border-radius: 4px;
+  opacity: 0.65;
+  width: 32px;
+  transition: height 0.25s var(--ease-out);
+}
+
+.gapLabel {
+  font-size: 9px;
+  color: var(--ink4);
+}
+
+.gapValue {
+  font-size: 10px;
+  color: var(--ink2);
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+
+.padTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.padTable th {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink4);
+  font-weight: 600;
+  text-align: left;
+  padding: 6px 12px 6px 0;
+  border-bottom: 1px solid var(--bg4);
+}
+
+.padTable td {
+  padding: 8px 12px 8px 0;
+  border-bottom: 1px solid var(--bg3);
+  font-size: 13px;
+  color: var(--ink2);
+}
+
+.padTable td:first-child {
+  color: var(--ink3);
+}
+
+.padTable code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--bg2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--ink3);
+}
+
+.padBar {
+  height: 10px;
+  background: var(--stroke);
+  opacity: 0.6;
+  border-radius: 2px;
+}
+
+.empty {
+  color: var(--ink4);
+  font-style: italic;
+  font-size: 13px;
+  padding: 12px 0;
+}

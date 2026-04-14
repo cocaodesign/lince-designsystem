@@ -1,0 +1,161 @@
+.families {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+  transition: var(--transition-theme);
+}
+
+.role {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink4);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.fname {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.tag {
+  font-size: 10px;
+  color: var(--ink4);
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  background: var(--bg3);
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.sampleSerif {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent-p);
+  line-height: 1.2;
+  font-style: italic;
+}
+
+[data-mode='dark'] .sampleSerif {
+  color: var(--stroke);
+}
+
+.sampleSans {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink3);
+  line-height: 1.6;
+}
+
+.hint {
+  font-size: 11px;
+  color: var(--ink4);
+  margin-top: 10px;
+}
+
+.scaleTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scaleTable th {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink4);
+  font-weight: 600;
+  text-align: left;
+  padding: 6px 12px 6px 0;
+  border-bottom: 1px solid var(--bg4);
+}
+
+.scaleTable td {
+  padding: 8px 12px 8px 0;
+  border-bottom: 1px solid var(--bg3);
+  font-size: 13px;
+  color: var(--ink2);
+  vertical-align: middle;
+}
+
+.scaleTable td:first-child {
+  color: var(--ink3);
+}
+
+.scaleTable td code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--bg2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--ink3);
+}
+
+.sizePreview {
+  display: inline-block;
+  font-family: var(--font-serif);
+  color: var(--stroke);
+}
+
+.weightGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.weightCard {
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  text-align: center;
+  transition: var(--transition-theme);
+}
+
+.weightSample {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.weightName {
+  font-size: 10px;
+  color: var(--ink4);
+}
+
+.weightValue {
+  font-size: 11px;
+  color: var(--stroke);
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.empty {
+  color: var(--ink4);
+  font-style: italic;
+  font-size: 13px;
+  padding: 16px 0;
+}
+
+@media (max-width: 768px) {
+  .families {
+    grid-template-columns: 1fr;
+  }
+  .weightGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
