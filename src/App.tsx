@@ -6,7 +6,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { useSearch } from '@/hooks/useSearch';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { Header } from '@/components/Header/Header';
-import { Sidebar, type NavGroup } from '@/components/Sidebar/Sidebar';
+import { Sidebar, type NavPillar } from '@/components/Sidebar/Sidebar';
 import { Hero } from '@/components/Hero/Hero';
 import { Section } from '@/components/Section/Section';
 import { ColorSwatches } from '@/components/ColorSwatches/ColorSwatches';
@@ -16,6 +16,7 @@ import { TypeScale } from '@/components/Typography/TypeScale';
 import { FontWeights } from '@/components/Typography/FontWeights';
 import { Spacing } from '@/components/Spacing/Spacing';
 import { Breakpoints } from '@/components/Breakpoints/Breakpoints';
+import { Placeholder } from '@/components/Placeholder/Placeholder';
 import { Toast } from '@/components/Toast/Toast';
 
 const SECTION_IDS = [
@@ -30,36 +31,62 @@ const SECTION_IDS = [
   'weights',
   'spacing',
   'screens',
+  'components',
+  'brand',
 ] as const;
 
-const NAV_GROUPS: NavGroup[] = [
+const NAV_PILLARS: NavPillar[] = [
   {
-    label: 'Início',
-    items: [{ id: 'hero', label: 'Visão geral', dotColor: 'var(--stroke)' }],
-  },
-  {
-    label: 'Cores',
-    items: [
-      { id: 'foreground', label: 'Foreground', dotColor: '#F1E1D9', dotBorder: '#e0c9be' },
-      { id: 'surface', label: 'Surface', dotColor: '#A87058' },
-      { id: 'feedback', label: 'Feedback', dotColor: '#C2576E' },
-      { id: 'content', label: 'Content', dotColor: '#44332C' },
-      { id: 'stroke', label: 'Stroke & Effects', dotColor: '#CF8C6E' },
+    groups: [
+      {
+        items: [{ id: 'hero', label: 'Visão geral', dotColor: 'var(--stroke)' }],
+      },
     ],
   },
   {
-    label: 'Tipografia',
-    items: [
-      { id: 'typography', label: 'Famílias' },
-      { id: 'scale', label: 'Escala' },
-      { id: 'weights', label: 'Pesos' },
+    label: 'Foundations',
+    groups: [
+      {
+        label: 'Cores',
+        items: [
+          { id: 'foreground', label: 'Foreground', dotColor: '#F1E1D9', dotBorder: '#e0c9be' },
+          { id: 'surface', label: 'Surface', dotColor: '#A87058' },
+          { id: 'feedback', label: 'Feedback', dotColor: '#C2576E' },
+          { id: 'content', label: 'Content', dotColor: '#44332C' },
+          { id: 'stroke', label: 'Stroke & Effects', dotColor: '#CF8C6E' },
+        ],
+      },
+      {
+        label: 'Tipografia',
+        items: [
+          { id: 'typography', label: 'Famílias' },
+          { id: 'scale', label: 'Escala' },
+          { id: 'weights', label: 'Pesos' },
+        ],
+      },
+      {
+        label: 'Espaçamento',
+        items: [
+          { id: 'spacing', label: 'Padding & Gap' },
+          { id: 'screens', label: 'Breakpoints' },
+        ],
+      },
     ],
   },
   {
-    label: 'Espaçamento',
-    items: [
-      { id: 'spacing', label: 'Padding & Gap' },
-      { id: 'screens', label: 'Breakpoints' },
+    label: 'Components',
+    groups: [
+      {
+        items: [{ id: 'components', label: 'Visão geral', badge: 'Em breve' }],
+      },
+    ],
+  },
+  {
+    label: 'Brand',
+    groups: [
+      {
+        items: [{ id: 'brand', label: 'Logotipos', badge: 'Em breve' }],
+      },
     ],
   },
 ];
@@ -75,7 +102,7 @@ const Content = () => {
     <>
       <Header query={query} onQueryChange={setQuery} />
       <div className="layout">
-        <Sidebar groups={NAV_GROUPS} activeId={activeId} />
+        <Sidebar pillars={NAV_PILLARS} activeId={activeId} />
         <main className="main" id="mainContent">
           <Hero />
 
@@ -136,6 +163,22 @@ const Content = () => {
 
           <Section id="screens" tag="10 · Layout" title="Breakpoints" description="Dimensões de referência por dispositivo.">
             <Breakpoints matches={matches} />
+          </Section>
+
+          <hr className="divider" />
+
+          <Section id="components" tag="Components" title="Biblioteca de componentes" description="Componentes reutilizáveis, acessíveis e consistentes — em construção.">
+            <Placeholder title="Componentes chegando em breve">
+              Estamos preparando a biblioteca de componentes do Lince. Aqui ficarão botões, inputs, cards, modais e demais blocos de UI, com variantes, estados e exemplos prontos pra copiar.
+            </Placeholder>
+          </Section>
+
+          <hr className="divider" />
+
+          <Section id="brand" tag="Brand" title="Identidade da marca" description="Logotipos, símbolos e diretrizes de uso da marca Lince.">
+            <Placeholder title="Assets de marca em preparação">
+              Em breve: logotipos em todas as variações, área de respiro, paleta institucional e diretrizes de aplicação. Os arquivos serão disponibilizados pra download.
+            </Placeholder>
           </Section>
         </main>
       </div>

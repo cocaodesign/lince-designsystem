@@ -16,6 +16,24 @@
   width: 0;
 }
 
+.pillarDivider {
+  border: none;
+  border-top: 1px solid var(--bg4);
+  margin: 20px 20px 16px;
+  transition: border-color 0.3s var(--ease-out);
+}
+
+.pillarLabel {
+  font-family: var(--font-serif, var(--font-sans));
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 4px 20px;
+  margin-bottom: 8px;
+}
+
 .section {
   margin-bottom: 8px;
 }
@@ -58,6 +76,22 @@
 
 [data-mode='dark'] .linkActive {
   color: var(--stroke);
+}
+
+.linkLabel {
+  flex: 1;
+  min-width: 0;
+}
+
+.badge {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink4);
+  background: var(--bg3);
+  padding: 2px 6px;
+  border-radius: 999px;
 }
 
 .dot {
